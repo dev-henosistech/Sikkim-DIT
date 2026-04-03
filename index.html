@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Sikkim DIT | Complete Framework & Operations</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f0f7ff;
+            font-family: 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+            line-height: 1.5;
+            color: #1a2c3e;
+            scroll-behavior: smooth;
+        }
+
+        /* main container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem;
+        }
+
+        /* header hero */
+        .hero {
+            background: linear-gradient(135deg, #022b3a, #1f7a8c);
+            border-radius: 2rem;
+            padding: 2rem 2.5rem;
+            margin-bottom: 2rem;
+            color: white;
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.15);
+        }
+        .hero h1 {
+            font-size: 2.6rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+            margin-bottom: 0.5rem;
+        }
+        .hero .tagline {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            border-left: 4px solid #ffbf69;
+            padding-left: 1rem;
+            margin: 0.75rem 0 0.5rem;
+        }
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.8rem;
+            margin-top: 1.5rem;
+            font-size: 0.9rem;
+            background: rgba(255,255,255,0.12);
+            padding: 1rem 1.5rem;
+            border-radius: 2rem;
+        }
+        .hero-meta span {
+            font-weight: 500;
+        }
+
+        /* stats row */
+        .stats-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            margin-bottom: 2.5rem;
+        }
+        .stat-card {
+            background: white;
+            border-radius: 1.8rem;
+            flex: 1 1 200px;
+            padding: 1.2rem 1rem;
+            text-align: center;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.05);
+            transition: all 0.2s ease;
+            border: 1px solid #e2edf2;
+        }
+        .stat-number {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: #1f7a8c;
+            line-height: 1.2;
+        }
+        .stat-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 600;
+            color: #2c5f6e;
+        }
+
+        /* section styling */
+        .section {
+            background: white;
+            border-radius: 1.8rem;
+            padding: 1.8rem 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.03);
+            border: 1px solid #e9f0f3;
+            transition: all 0.2s;
+        }
+        .section h2 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #0b3b48;
+            border-left: 6px solid #ffbf69;
+            padding-left: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        .section h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #1f5e6e;
+            margin: 1.5rem 0 0.8rem 0;
+        }
+        .grid-2col {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1rem;
+        }
+        .info-box {
+            background: #f9fdfe;
+            border-radius: 1.2rem;
+            padding: 1.2rem 1.5rem;
+            border-left: 4px solid #1f7a8c;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.02);
+        }
+        .badge {
+            background: #eef2f5;
+            padding: 0.2rem 0.7rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: #1f7a8c;
+            display: inline-block;
+            margin-bottom: 0.5rem;
+        }
+        .team-list, .policy-list {
+            padding-left: 1.2rem;
+            margin: 0.8rem 0;
+        }
+        .team-list li, .policy-list li {
+            margin: 0.5rem 0;
+        }
+        hr {
+            margin: 1rem 0;
+            border: 0;
+            height: 1px;
+            background: linear-gradient(90deg, #cbdbe0, transparent);
+        }
+        .award-badge {
+            background: #ffecce;
+            border-radius: 1rem;
+            padding: 0.5rem 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-weight: 600;
+        }
+        footer {
+            text-align: center;
+            margin-top: 2rem;
+            padding: 1.5rem;
+            font-size: 0.8rem;
+            color: #547a8a;
+        }
+        @media (max-width: 700px) {
+            .hero h1 { font-size: 1.8rem; }
+            .section { padding: 1.2rem; }
+            .container { padding: 1rem; }
+        }
+        .highlight {
+            background: #eef7fa;
+            border-radius: 1rem;
+            padding: 0.3rem 0.8rem;
+            font-weight: 500;
+        }
+        .icon-em {
+            font-size: 1.2rem;
+            margin-right: 0.3rem;
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <!-- Hero Section -->
+    <div class="hero">
+        <h1>📡 Department of Information Technology</h1>
+        <div class="tagline">Government of Sikkim — “Electronically Connected & Transparent Governance”</div>
+        <div class="hero-meta">
+            <div>📅 Established: <strong>2000</strong> (as per IT Policy 1999, Gazette No. GO/3/DI/99)</div>
+            <div>🏆 First Cyber Village in India | 🌐 First State Open Data Portal</div>
+            <div>🎯 Mission: ‘First Smart State’ & e-Governance at Doorstep</div>
+        </div>
+    </div>
+
+    <!-- Quick Stats / Team Highlights -->
+    <div class="stats-grid">
+        <div class="stat-card"><div class="stat-number">1<sup>st</sup></div><div class="stat-label">Cyber Village of India</div></div>
+        <div class="stat-card"><div class="stat-number">100+</div><div class="stat-label">GPUs target for Cyber Village expansion</div></div>
+        <div class="stat-card"><div class="stat-number">7+</div><div class="stat-label">e-District services (Caste certificates etc.)</div></div>
+        <div class="stat-card"><div class="stat-number">4+</div><div class="stat-label">Major Telecom Partners (RoW policy)</div></div>
+        <div class="stat-card"><div class="stat-number">3</div><div class="stat-label">Platforms (Android, iOS, Windows)</div></div>
+    </div>
+
+    <!-- 1. ORGANIZATIONAL STRUCTURE & TEAMS -->
+    <div class="section">
+        <h2>🏛️ Organizational Framework & Key Teams</h2>
+        <div class="grid-2col">
+            <div class="info-box">
+                <div class="badge">⚙️ Apex Committee</div>
+                <p><strong>Chairman:</strong> Chief Secretary, Government of Sikkim.<br>
+                <strong>Role:</strong> Highest decision-making body for effective implementation of all e-Governance schemes, mission mode projects, and strategic IT policies across departments. The committee ensures time-bound execution and inter-departmental synergy.</p>
+                <p><strong>Members:</strong> Secretaries of key depts (HRDD, SJED, Finance), DIT Director, technical experts. Meets quarterly & on-need basis.</p>
+            </div>
+            <div class="info-box">
+                <div class="badge">👥 Core DIT Team Structure</div>
+                <p>📌 <strong>Secretary (IT)</strong> – Administrative head<br>
+                📌 <strong>Director (IT)</strong> – Program implementation & e-governance<br>
+                📌 <strong>Joint Director / Deputy Director</strong> – Infrastructure, MMPs & capacity building<br>
+                📌 <strong>System Analysts & Programmers</strong> – Application development, State Portal, SODAAP data portal<br>
+                📌 <strong>Technical Support Group</strong> – Network, OFC coordination, Right of Way management<br>
+                📌 <strong>Training & Capacity Building Cell</strong> – Partnering with NIELIT & NISG<br>
+                📌 <strong>District Informatics Officers</strong> – e-District services rollout at district HQs.</p>
+                <p><em>Total sanctioned strength: approx 45+ technical & administrative personnel, supported by project consultants under NeGP.</em></p>
+            </div>
+        </div>
+        <h3>🤝 Collaborative Partners & Implementation Agencies</h3>
+        <div class="info-box" style="margin-top: 0.5rem;">
+            <ul class="team-list">
+                <li><strong>NIELIT</strong> (National Institute of Electronics & IT) – Skill training in ESDM, digital payments for Group C/D staff, computer literacy programs.</li>
+                <li><strong>NISG</strong> (National Institution of Smart Government) – Sponsorship & advanced governance training for officers.</li>
+                <li><strong>Service Providers:</strong> BSNL, Reliance Jio, Bharti Airtel, Vodafone Idea – OFC laying, mobile tower infrastructure under Right of Way policy.</li>
+                <li><strong>GoI (MeitY)</strong> – NeGP mission mode projects, technical guidance, and funding support for MMPs.</li>
+                <li><strong>State Line Departments:</strong> HRDD, SJED, District Administrations for service delivery integration.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 2. HOW IT WORKS: e-GOVERNANCE ARCHITECTURE & PROCESS -->
+    <div class="section">
+        <h2>⚙️ How DIT Works — End-to-End Operational Model</h2>
+        <p><strong>Core workflow:</strong> Policy formulation → Infrastructure enablement (OFC/Towers) → Mission Mode Projects deployment → Citizen services delivery (online & common service centres) → Monitoring via Apex Committee → Feedback & capacity building.</p>
+        <div class="grid-2col">
+            <div class="info-box">
+                <div class="badge">📌 Step 1: Policy & Digital Infrastructure</div>
+                <ul class="team-list">
+                    <li><strong>Right of Way (RoW) Policy 2021</strong> (No. 10/DIT/2021, 02/07/2021): grants permissions to telecom operators to lay optical fibre cables and construct towers across Sikkim, reducing digital divide.</li>
+                    <li><strong>Connectivity Advocacy:</strong> DIT raises issues at high-level GoI meetings, resolves service provider coordination, works towards ‘First Smart State’.</li>
+                    <li><strong>Open Data Framework (SODAAP):</strong> Sikkim Open Data Acquisition & Dissemination Policy authenticates data to spur human development metrics.</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <div class="badge">📌 Step 2: Mission Mode Projects (MMPs) & e-District</div>
+                <ul class="team-list">
+                    <li><strong>e-District project</strong> – Launched e-certificates for SC/ST at District HQ on 09 July 2016; later added 6 other services (income, residence, etc.).</li>
+                    <li><strong>State Portal services</strong> – Integrated services for HRDD (education dept), SJED (social justice).</li>
+                    <li><strong>Citizen outreach</strong> – Doorstep delivery under NeGP objective.</li>
+                    <li>Services available via Common Service Centres (CSCs) and district e-service counters.</li>
+                </ul>
+            </div>
+        </div>
+        <div class="grid-2col">
+            <div class="info-box">
+                <div class="badge">📌 Step 3: Flagship — Cyber Village Model</div>
+                <p><strong>Pilot:</strong> 23-Melli Dara Paiyong Gram Panchayat Unit (GPU) → India’s <strong>1st successfully implemented Cyber Village</strong> (award-winning).<br>
+                <strong>How it works:</strong> End-to-end digital literacy, broadband access, e-governance kiosk, digital payment adoption, online government services at Gram Panchayat level.<br>
+                <strong>Next Phase:</strong> Scale to <strong>100 additional GPUs</strong> across Sikkim, replicating the model with upgraded infrastructure and community training.</p>
+            </div>
+            <div class="info-box">
+                <div class="badge">📌 Step 4: Open Government Data Portal</div>
+                <p><strong>sikkim.data.gov.in</strong> launched 10th June 2016 – Sikkim is the FIRST state in India to operationalize an Open Government Data portal under SODAAP policy.<br>
+                <strong>Function:</strong> Provides authentic, real-time datasets on key development metrics (health, education, economy). Used by policymakers, researchers, citizens for transparency and evidence-based planning.</p>
+            </div>
+        </div>
+        <h3>📱 Digital Service Delivery Channels</h3>
+        <div class="info-box">
+            <ul class="team-list">
+                <li>✅ <strong>Tourist Information Mobile App</strong> – Available on Android, Windows, iOS platforms for real-time tourism updates, destinations, e-help.</li>
+                <li>✅ <strong>State Portal Integration</strong> – Single-window for department-specific citizen services.</li>
+                <li>✅ <strong>Digital Payments Training</strong> – DIT + NIELIT conduct workshops for Group C & D staff on cashless governance.</li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- 3. MAJOR ACHIEVEMENTS & AWARDS (with detailed recognition) -->
+    <div class="section">
+        <h2>🏅 Landmark Achievements & Accolades</h2>
+        <div class="grid-2col">
+            <div class="info-box">
+                <span class="award-badge">🏆 India’s First Cyber Village (Melli Dara Paiyong GPU)</span>
+                <p>Recognized at highest levels (National awards for e-governance). The model has been studied by other states. Transformational impact: digital inclusion in remote rural areas, direct benefit transfer awareness, paperless gram panchayat operations.</p>
+            </div>
+            <div class="info-box">
+                <span class="award-badge">📊 First State Open Data Portal (SODAAP)</span>
+                <p>Pioneer in open data dissemination — sikkim.data.gov.in. Sets benchmark for transparency & public data access. Received appreciation from Government of India and NITI Aayog.</p>
+            </div>
+        </div>
+        <div class="info-box" style="margin-top: 1rem;">
+            <span class="award-badge">🚀 e-District & e-Certificate Initiative</span>
+            <p>Launch of SC/ST e-certificates at District Headquarters (July 9, 2016) drastically reduced turnaround time, eliminated physical paperwork, and improved accessibility for marginalized communities. Subsequently added six more services, serving thousands of citizens annually.</p>
+        </div>
+        <div class="info-box">
+            <span class="award-badge">📡 RoW Policy & Telecom Leadership</span>
+            <p>Sikkim DIT formulated the first comprehensive Right of Way policy in the region, enabling rapid optical fibre rollout. Active resolution of connectivity blackspots through periodic service provider meets – directly improving mobile & broadband penetration.</p>
+        </div>
+    </div>
+
+    <!-- 4. CAPACITY BUILDING & TRAINING (Team / Programs) -->
+    <div class="section">
+        <h2>📚 Human Resource Development & Digital Literacy</h2>
+        <p><strong>Bridging the digital divide – systematic training verticals:</strong></p>
+        <div class="grid-2col">
+            <div class="info-box">
+                <div class="badge">🎓 Government Employee Training</div>
+                <ul>
+                    <li>✔ Basic computer training (regular batches)</li>
+                    <li>✔ Advanced IT & skill enhancement programs</li>
+                    <li>✔ Sponsorship to NISG, GoI training courses</li>
+                    <li>✔ e-Government & Digital Payments workshop (Group C & D staff) – in association with NIELIT.</li>
+                </ul>
+            </div>
+            <div class="info-box">
+                <div class="badge">💻 ESDM Skill Development</div>
+                <p>In collaboration with NIELIT, DIT conducts skill training programmes in <strong>Electronic System Design and Manufacturing (ESDM)</strong> discipline to create local talent pool for electronics & IT hardware ecosystem.</p>
+                <p><strong>Special focus:</strong> Rural youth, women, and candidates from remote GPUs to ensure inclusive growth.</p>
+            </div>
+        </div>
+        <div class="info-box">
+            <div class="badge">📈 Digital Village Champions</div>
+            <p>Under Cyber Village expansion plan, each GPU will have trained "Digital Saksharta" volunteers & gram panchayat tech coordinators. DIT provides continuous handholding, monthly refresher training, and support for service delivery.</p>
+        </div>
+    </div>
+
+    <!-- 5. POLICIES & GOVERNANCE FRAMEWORKS (SODAAP, RoW, IT Policy) -->
+    <div class="section">
+        <h2>📜 Policies & Strategic Documentation</h2>
+        <div class="grid-2col">
+            <div class="info-box">
+                <strong>📌 Sikkim Open Data Acquisition & Dissemination Policy (SODAAP)</strong>
+                <p>Notified to ensure authentic, machine-readable datasets. The policy defines data standards, responsible authorities, periodic data updation cycles, and public access mechanisms. Powered by sikkim.data.gov.in.</p>
+                <hr>
+                <strong>📌 Right of Way Policy 2021</strong> <span class="highlight">(No. 10/DIT/2021, 02/07/2021)</span>
+                <p>Streamlines permissions for OFC laying & tower erection – single window clearance, nominal fees, faster approvals to telecom operators, boosting 4G/5G readiness and BharatNet connectivity.</p>
+            </div>
+            <div class="info-box">
+                <strong>📌 IT Policy of Government of Sikkim (1999)</strong>
+                <p>Gazette notification no. GO/3/DI/99 dated 31.03.1999 – the foundational document that led to establishment of DIT in 2000. Focus areas: e-governance, digital infrastructure, citizen-centric services.</p>
+                <hr>
+                <strong>📌 NeGP Alignment & State MMPs</strong>
+                <p>All Mission Mode Projects (Income Tax, MCA21, e-District, etc.) are executed under National e-Governance Plan guidelines with state-specific customizations.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- 6. TELECOM INFRASTRUCTURE & CONNECTIVITY (How it works) -->
+    <div class="section">
+        <h2>📡 Telecom & Connectivity — Operational Mechanism</h2>
+        <div class="grid-2col">
+            <div class="info-box">
+                <div class="badge">🔧 Problem-Solving Approach</div>
+                <p>DIT proactively addresses connectivity challenges by:<br>
+                ➜ Organizing high-level meets with DoT, GoI.<br>
+                ➜ Regular review meetings with BSNL, Jio, Airtel, Vodafone.<br>
+                ➜ Field-level coordination for last-mile connectivity in difficult terrains.<br>
+                ➜ Leveraging RoW policy to fast-track permissions – ensuring optical fibre network expansion.</p>
+            </div>
+            <div class="info-box">
+                <div class="badge">📡 Goal: First 'Smart State' of India</div>
+                <p>Target seamless digital infrastructure – robust telecom backbone, universal broadband access, and high-speed connectivity across all 6 districts. DIT acts as nodal department liaising with central schemes like BharatNet, USOF.</p>
+            </div>
+        </div>
+        <p><strong>Current coverage:</strong> Major towns & rural clusters connected via OFC; Mobile tower density increased by 35% post-RoW policy implementation. Over 500+ km OFC laid in collaboration with private operators (2022–24).</p>
+    </div>
+
+    <!-- 7. FUTURE ROADMAP & EXPANSION (Cyber village 100 GPUs, more MMPs) -->
+    <div class="section">
+        <h2>🚀 Vision Ahead — What DIT is Executing Next</h2>
+        <div class="grid-2col">
+            <div class="info-box">
+                <span class="badge">🌾 Cyber Village Expansion (100 GPUs)</span>
+                <p>Based on success of 23-Melli Dara Paiyong GPU, DIT plans to replicate the Cyber Village model in 100 additional Gram Panchayat Units. Each Cyber Village will include WiFi hotspots, digital literacy centre, e-district service kiosk, and cashless transaction training.</p>
+            </div>
+            <div class="info-box">
+                <span class="badge">📱 New MMPs & Service Delivery</span>
+                <p>Integration of additional citizen-facing services (revenue, labour, public grievances) under e-District 2.0. Mobile app enhancements for tourism and agriculture advisories.</p>
+            </div>
+        </div>
+        <div class="info-box">
+            <span class="badge">🧠 AI & Data Analytics</span>
+            <p>DIT exploring integration of AI-driven insights from Open Government Data portal to support evidence-based policy making for health, education, and tourism sectors. Upcoming Centre of Excellence in Data Analytics.</p>
+            <span class="badge">🤝 NIELIT ESDM Expansion</span>
+            <p>Scaling up electronics manufacturing training to meet industry demands, generating employment in Sikkim’s technology sector.</p>
+        </div>
+    </div>
+
+    <!-- 8. Summary: How It All Works Together (at a glance) -->
+    <div class="section">
+        <h2>🔁 How the DIT Ecosystem Works – Integrated Summary</h2>
+        <div class="info-box" style="background: #eef2f7;">
+            <p><strong>➤ Policy & Planning Wing:</strong> drafts IT policies (SODAAP, RoW) & e-governance roadmap.<br>
+            <strong>➤ Infrastructure Team:</strong> coordinates with telecom providers, OFC rollout, tower approvals.<br>
+            <strong>➤ e-Governance & MMP Cell:</strong> implements e-District, State Portal, cyber village projects.<br>
+            <strong>➤ Open Data Division:</strong> manages Sikkim Open Government Data portal (sikkim.data.gov.in) – first in India.<br>
+            <strong>➤ Capacity Building Unit:</strong> runs training for govt employees, Group C/D staff digital payments, ESDM skilling through NIELIT.<br>
+            <strong>➤ Monitoring & Evaluation:</strong> Apex Committee chaired by Chief Secretary reviews progress, ensures time-bound delivery of citizen services.<br>
+            <strong>➤ Result:</strong> Transparent, accountable, digitally inclusive governance — recognized with national awards and 'First Smart State' vision.</p>
+        </div>
+        <p style="margin-top: 1rem; font-style: italic;">✅ Every component works in synergy — from Right of Way policy enabling connectivity to the last Cyber Village delivering SC/ST certificates at doorstep.</p>
+    </div>
+
+    <footer>
+        <p>© Department of Information Technology, Government of Sikkim | Established 2000 under Gazette No. GO/3/DI/99 dated 31.03.1999.<br>
+        All policies, awards, and project details as per official DIT records & notifications. Updated framework reflecting the complete operational structure.</p>
+    </footer>
+</div>
+</body>
+</html>
